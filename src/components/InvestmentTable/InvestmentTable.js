@@ -1,10 +1,10 @@
-import '../InvestmentTable/InvestmentTable.css'
+import classes from '../InvestmentTable/InvestmentTable.module.css'
 import InvestmentRow from './InvestmentRow'
 
 const InvestmentTable = (props) => {
 
   return (
-    <table className="result">
+    <table className={classes.result}>
       <thead>
         <tr>
           <th>Year</th>

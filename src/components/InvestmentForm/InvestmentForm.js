@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../InvestmentForm/InvestmentForm.css'
+import classes from '../InvestmentForm/InvestmentForm.module.css'
 
 const initialUserInput = {
     savings: '', yearlyCont: '', returns: '', duration: ''
@@ -28,8 +28,8 @@ const InvestmentForm = (props) => {
     }
 
     return (
-        <form className="form" onSubmit={submitHandler}>
-            <div className="input-group">
+        <form className={classes.form} onSubmit={submitHandler}>
+            <div className={classes["input-group"]}>
                 <p>
                     <label htmlFor="current-savings">Current Savings ($)</label>
                     <input value={userInput.savings} type="number" id="current-savings" onChange={(event) => inputValueHandler('savings', event.target.value)} />
@@ -39,7 +39,7 @@ const InvestmentForm = (props) => {
                     <input value={userInput.yearlyCont} type="number" id="yearly-contribution" onChange={(event) => inputValueHandler('yearlyCont', event.target.value)} />
                 </p>
             </div>
-            <div className="input-group">
+            <div className={classes["input-group"]}>
                 <p>
                     <label htmlFor="expected-return">
                         Expected Interest (%, per year)
@@ -51,11 +51,11 @@ const InvestmentForm = (props) => {
                     <input value={userInput.duration} type="number" id="duration" onChange={(event) => inputValueHandler('duration', event.target.value)} />
                 </p>
             </div>
-            <p className="actions">
-                <button type="reset" className="buttonAlt" onClick={resetData}>
+            <p className={classes["actions"]}>
+                <button type="reset" className={classes.buttonAlt} onClick={resetData}>
                     Reset
                 </button>
-                <button type="submit" className="button">
+                <button type="submit" className={classes.button}>
                     Calculate
                 </button>
             </p>
