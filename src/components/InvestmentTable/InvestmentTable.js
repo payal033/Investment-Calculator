@@ -1,28 +1,32 @@
 import '../InvestmentTable/InvestmentTable.css'
+import InvestmentRow from './InvestmentRow'
 
-const InvestmentTable = () => {
-    return (
-        <table className="result">
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Total Savings</th>
-            <th>Interest (Year)</th>
-            <th>Total Interest</th>
-            <th>Invested Capital</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>YEAR NUMBER</td>
-            <td>TOTAL SAVINGS END OF YEAR</td>
-            <td>INTEREST GAINED IN YEAR</td>
-            <td>TOTAL INTEREST GAINED</td>
-            <td>TOTAL INVESTED CAPITAL</td>
-          </tr>
-        </tbody>
-      </table>
-    )
+const InvestmentTable = (props) => {
+
+  return (
+    <table className="result">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Total Savings</th>
+          <th>Interest (Year)</th>
+          <th>Total Interest</th>
+          <th>Invested Capital</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.data.map(d => (
+          <InvestmentRow
+            year={d.year}
+            yearlyInterest={d.yearlyInterest}
+            savingsEndOfYear={d.savingsEndOfYear}
+            yearlyContribution={d.yearlyContribution}
+          />
+        ))}
+      </tbody>
+
+    </table>
+  )
 }
 
 export default InvestmentTable
