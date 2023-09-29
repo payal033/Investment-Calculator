@@ -12,7 +12,7 @@ const InvestmentRow = (props) => {
             <td>{props.year}</td>
             <td>{formatter.format(props.savingsEndOfYear)}</td>
             <td>{formatter.format(props.yearlyInterest)}</td>
-            <td>{ }</td>
+            <td>{formatter.format(props.interestGained)}</td>
             <td>{formatter.format(props.yearlyContribution)}</td>
         </tr>
     )

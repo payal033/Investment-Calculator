@@ -17,10 +17,12 @@ const InvestmentTable = (props) => {
       <tbody>
         {props.data.map(d => (
           <InvestmentRow
+            key={d.year}
             year={d.year}
             yearlyInterest={d.yearlyInterest}
             savingsEndOfYear={d.savingsEndOfYear}
-            yearlyContribution={d.yearlyContribution}
+            interestGained={d.savingsEndOfYear - props.initial - d.yearlyContribution * d.year}
+            yearlyContribution={props.initial + d.yearlyContribution * d.year}
           />
         ))}
       </tbody>
