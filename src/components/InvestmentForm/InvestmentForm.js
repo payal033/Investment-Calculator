@@ -31,11 +31,11 @@ const InvestmentForm = (props) => {
         <form className={classes.form} onSubmit={submitHandler}>
             <div className={classes["input-group"]}>
                 <p>
-                    <label htmlFor="current-savings">Current Savings ($)</label>
+                    <label htmlFor="current-savings">Current Savings (&#8377;)</label>
                     <input value={userInput.savings} type="number" id="current-savings" onChange={(event) => inputValueHandler('savings', event.target.value)} />
                 </p>
                 <p>
-                    <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
+                    <label htmlFor="yearly-contribution">Yearly Savings (&#8377;)</label>
                     <input value={userInput.yearlyCont} type="number" id="yearly-contribution" onChange={(event) => inputValueHandler('yearlyCont', event.target.value)} />
                 </p>
             </div>
